@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rowStats"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1,2,3,4,5">
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/tvNickname"
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/nickname" />
+
+        <TextView
+            android:id="@+id/tvCitizen"
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/citiz" />
+
+        <TextView
+            android:id="@+id/tvSerif"
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/serif" />
+
+        <TextView
+            android:id="@+id/tvMafia"
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/mafia" />
+
+        <TextView
+            android:id="@+id/tvDon"
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/donnn" />
+    </TableRow>
+
+</TableLayout>

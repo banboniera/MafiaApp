@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:stretchColumns="1,2,3,4,5"
+    tools:context=".fragments.StatsFragment">
+
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/nickname"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/citizen"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/serif"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/mafia"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/don_w_l"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</TableLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listOfClubs">
+
+    <fragment
+        android:id="@+id/listOfClubs"
+        android:name="com.example.mafia.fragments.list.ListOfClubs"
+        android:label="List of clubs"
+        tools:layout="@layout/fragment_list_of_clubs">
+        <action
+            android:id="@+id/action_listOfClubs_to_addClub"
+            app:destination="@id/addClub" />
+        <action
+            android:id="@+id/action_listOfClubs_to_updateClubFragment"
+            app:destination="@id/updateClub" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addClub"
+        android:name="com.example.mafia.fragments.add.AddClub"
+        android:label="Add"
+        tools:layout="@layout/fragment_add_club" >
+        <action
+            android:id="@+id/action_addClub_to_listOfClubs"
+            app:destination="@id/listOfClubs" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateClub"
+        android:name="com.example.mafia.fragments.update.UpdateClub"
+        android:label="Update club"
+        tools:layout="@layout/fragment_update_club">
+        <action
+            android:id="@+id/action_updateClubFragment_to_listOfClubs"
+            app:destination="@id/listOfClubs" />
+        <argument
+            android:name="currentClub"
+            app:argType="com.example.mafiaapp.data.Club" />
+        <action
+            android:id="@+id/action_updateClubFragment_to_listOfPlayers"
+            app:destination="@id/listOfPlayers" />
+        <action
+            android:id="@+id/action_updateClub_to_statsFragment"
+            app:destination="@id/statsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfPlayers"
+        android:name="com.example.mafia.fragments.list.ListOfPlayers"
+        android:label="List of players">
+        <action
+            android:id="@+id/action_listOfPlayers_to_updateClubFragment"
+            app:destination="@id/updateClub" />
+        <action
+            android:id="@+id/action_listOfPlayers_to_addPlayer"
+            app:destination="@id/addPlayer" />
+        <action
+            android:id="@+id/action_listOfPlayers_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_listOfPlayers_to_updatePlayer"
+            app:destination="@id/updatePlayer" />
+        <argument
+            android:name="club"
+            app:argType="com.example.mafiaapp.data.Club" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlayer"
+        android:name="com.example.mafia.fragments.add.AddPlayer"
+        android:label="Player"
+        tools:layout="@layout/fragment_add_player">
+        <action
+            android:id="@+id/action_addPlayer_to_listOfPlayers"
+            app:destination="@id/listOfPlayers" />
+        <argument
+            android:name="club"
+            app:argType="com.example.mafiaapp.data.Club" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.mafia.fragments.GameFragment"
+        android:label="GameFragment" >
+        <action
+            android:id="@+id/action_gameFragment_to_listOfPlayers"
+            app:destination="@id/listOfPlayers" />
+        <argument
+            android:name="players"
+            app:argType="com.example.mafiaapp.data.Player[]" />
+        <argument
+            android:name="club"
+            app:argType="com.example.mafiaapp.data.Club" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePlayer"
+        android:name="com.example.mafia.fragments.update.UpdatePlayerFragment"
+        android:label="Update player"
+        tools:layout="@layout/fragment_update_player">
+        <action
+            android:id="@+id/action_updatePlayer_to_listOfPlayers"
+            app:destination="@id/listOfPlayers" />
+        <argument
+            android:name="currentPlayer"
+            app:argType="com.example.mafiaapp.data.Player" />
+        <argument
+            android:name="club"
+            app:argType="com.example.mafiaapp.data.Club" />
+    </fragment>
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.mafia.fragments.StatsFragment"
+        android:label="Stats"
+        tools:layout="@layout/fragment_stats">
+        <action
+            android:id="@+id/action_statsFragment_to_updateClub"
+            app:destination="@id/updateClub" />
+        <argument
+            android:name="club"
+            app:argType="com.example.mafiaapp.data.Club" />
+        <action
+            android:id="@+id/action_statsFragment_to_updateStats"
+            app:destination="@id/updateStats" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateStats"
+        android:name="com.example.mafia.fragments.update.UpdateStats"
+        android:label="Update stats"
+        tools:layout="@layout/fragment_update_stats">
+        <action
+            android:id="@+id/action_updateStats_to_statsFragment"
+            app:destination="@id/statsFragment" />
+        <argument
+            android:name="player"
+            app:argType="com.example.mafiaapp.data.Player" />
+        <argument
+            android:name="club"
+            app:argType="com.example.mafiaapp.data.Club" />
+    </fragment>
+
+</navigation>
